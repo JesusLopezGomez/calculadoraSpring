@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Calculadora</title>
+</head>
+<body>
+	<form class="form-horizontal" th:action="@{solve}" th:object="${calc}">
+		<fieldset>
+			<legend>Calculadora</legend>
+			
+			<div>
+				<label>Número 1</label>
+				<div>
+					<input id="number1" name="number1" th:field="*{number1}" type="number" placeholder="Introduce un número" required>
+				</div>
+				<br>
+				<label>Número 2</label>
+				<div>
+					<input id="number2" name="number2" th:field="*{number2}" type="number" placeholder="Introduce un número" required>
+				</div>
+				<br>
+				<label>Operador</label>
+				<div>
+				  <input type="radio" id="operator" th:field="*{operator}" name="operator" value="+" required>
+				  <label for="suma">Suma</label>
+				  <input type="radio" id="operator" th:field="*{operator}" name="operator" value="-" required>
+				  <label for="restar">Restar</label> 
+				  <input type="radio" id="operator" th:field="*{operator}" name="operator" value="*" required>
+  				  <label for="restar">Multiplicar</label> 
+				</div><br>
+				<label th:text="${result}">
+				
+				</label><br>
+				
+				<button type="submit">Enviar</button>
+			</div>
+		</fieldset>
+	</form>
+</body>
+</html>
