@@ -10,7 +10,6 @@
 			<legend>Calculadora Básica</legend>
 			
 			<div>
-				<label th:classapend="${#fields.hasErrors('number1')} ? 'has-error'"></label>
 				<label>Número 1</label>
 				<div>
 					<input id="number1" name="number1" th:field="*{number1}" type="number" placeholder="Introduce un número" required>
@@ -31,9 +30,7 @@
   				  <label for="restar">Multiplicar</label> 
 				</div><br>
 				<label th:text="${resultC}">
-				
 				</label><br>
-				
 				<button type="submit">Enviar</button>
 			</div>
 		</fieldset>

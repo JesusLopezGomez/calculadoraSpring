@@ -2,12 +2,13 @@ package com.jacaranda.calculator.model;
 
 import java.util.Objects;
 
-
 import jakarta.validation.constraints.NotNull;
 
 
 public class Calculator {
+	@NotNull
 	private double number1;
+	@NotNull
 	private double number2;
 	private char operator;
 	
@@ -15,16 +16,24 @@ public class Calculator {
 		return number1;
 	}
 	
-	public void setNumber1(double number1) {
-		this.number1 = number1;
+	public void setNumber1(double number1) throws Exception {
+		try {			
+			this.number1 = number1;
+		} catch (Exception e) {
+			throw new Exception("El numero 1 deber ser un número y mayor que 0");
+		}
 	}
 	
 	public double getNumber2() {
 		return number2;
 	}
 	
-	public void setNumber2(double number2) {
-		this.number2 = number2;
+	public void setNumber2(double number2) throws Exception {
+		try {
+			this.number2 = number2;
+		}catch (Exception e) {
+			throw new Exception("El numero 2 deber ser un número y mayor que 0");
+		}
 	}
 	
 	public char getOperator() {

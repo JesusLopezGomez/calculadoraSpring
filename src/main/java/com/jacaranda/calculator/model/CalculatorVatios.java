@@ -2,9 +2,13 @@ package com.jacaranda.calculator.model;
 
 import java.util.Objects;
 
-public class CalculatorVatios {
+import jakarta.validation.constraints.NotNull;
 
+public class CalculatorVatios {
+	
+	@NotNull
 	private double voltio;
+	@NotNull
 	private double amperio;
 	
 	public double getVoltio() {
