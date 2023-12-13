@@ -7,9 +7,10 @@
 <body>
 	<form class="form-horizontal" th:action="@{solve}" th:object="${calc}">
 		<fieldset>
-			<legend>Calculadora</legend>
+			<legend>Calculadora Básica</legend>
 			
 			<div>
+				<label th:classapend="${#fields.hasErrors('number1')} ? 'has-error'"></label>
 				<label>Número 1</label>
 				<div>
 					<input id="number1" name="number1" th:field="*{number1}" type="number" placeholder="Introduce un número" required>
@@ -29,9 +30,31 @@
 				  <input type="radio" id="operator" th:field="*{operator}" name="operator" value="*" required>
   				  <label for="restar">Multiplicar</label> 
 				</div><br>
-				<label th:text="${result}">
+				<label th:text="${resultC}">
 				
 				</label><br>
+				
+				<button type="submit">Enviar</button>
+			</div>
+		</fieldset>
+	</form>
+	<br>
+	<form class="form-horizontal" th:action="@{solveVatios}" th:object="${calcV}">
+		<fieldset>
+			<legend>Calculadora Électrica</legend>
+			
+			<div>
+				<label>Voltios</label>
+				<div>
+					<input id="voltio" name="voltio" th:field="*{voltio}" type="number" placeholder="Introduce un número" required>
+				</div>
+				<br>
+				<label>Amperios</label>
+				<div>
+					<input id="amperio" name="amperio" th:field="*{amperio}" type="number" placeholder="Introduce un número" required>
+				</div>
+				<br>
+				<label th:text="${resultV}"></label><br>
 				
 				<button type="submit">Enviar</button>
 			</div>

@@ -2,6 +2,10 @@ package com.jacaranda.calculator.model;
 
 import java.util.Objects;
 
+
+import jakarta.validation.constraints.NotNull;
+
+
 public class Calculator {
 	private double number1;
 	private double number2;
@@ -31,7 +35,7 @@ public class Calculator {
 		this.operator = operator;
 	}
 	
-	public double getResult() throws Exception {
+	private double getResult() throws Exception {
 		double result = 0;
 		
 		if(this.operator == '+') {
@@ -47,6 +51,11 @@ public class Calculator {
 		}
 		
 		return result;
+	}
+	
+	public String getResultString() throws Exception {
+		return String.format("Operación anterior: %s %s %s = %s", 
+				this.getNumber1(),this.getOperator(),this.getNumber2(),this.getResult());
 	}
 	
 	@Override
