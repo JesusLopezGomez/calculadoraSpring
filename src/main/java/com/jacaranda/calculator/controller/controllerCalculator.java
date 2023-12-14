@@ -24,14 +24,6 @@ public class controllerCalculator {
 		return "calculator";
 	}
 	
-	@GetMapping("/calculatorVatios")
-	public String calculatorVatios(Model model) {
-		CalculatorVatios calculatorVatios = new CalculatorVatios();
-		
-		model.addAttribute("calcV", calculatorVatios);
-		return "calculatorVatios";
-	}
-	
 	@GetMapping("/solve")
 	public String solve(@Validated Model model, @ModelAttribute("calc") Calculator calculatorUser ,BindingResult bindingResult) throws Exception {
 		Calculator calculator = new Calculator();
