@@ -32,7 +32,6 @@ public class controllerCalculator {
 		model.addAttribute("calcV", calculatorVatios);
 		
 		if(bindingResult.hasErrors()) {
-			model.addAttribute("resultC", "Error al realizar la operación");
 			return "calculator";
 		}
 		
@@ -55,7 +54,6 @@ public class controllerCalculator {
 		model.addAttribute("calcV", calculatorVatios);
 		
 		if(bindingResult.hasErrors()) {
-			model.addAttribute("resultV", "Error al realizar la operación");
 			return "calculator";
 		}
 		

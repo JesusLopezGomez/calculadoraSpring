@@ -2,13 +2,16 @@ package com.jacaranda.calculator.model;
 
 import java.util.Objects;
 
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 
 
 public class Calculator {
-	@NotNull
+	@Min(value = 0,message="El número 1 debe ser mayor que 0")
+	@NotNull(message="No puede ser nulo el número 1")
 	private double number1;
-	@NotNull
+	@Min(value = 0,message="El número 2 debe ser mayor que 0")
+	@NotNull(message="No puede ser nulo el número 2")
 	private double number2;
 	private char operator;
 	
