@@ -13,7 +13,7 @@ pipeline {
             steps {
                 sh 'mkdir -p webapps/CalculadoraSpring'
 
-                sh 'cp -r build Jenkinsfile webapps/CalculadoraSpring'
+                sh 'cp -r Jenkinsfile src webapps/CalculadoraSpring'
             }
         }
 
