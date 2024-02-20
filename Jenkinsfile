@@ -1,19 +1,20 @@
 pipeline {
     agent any
 
+    tools{
+        maven 'Maven'
+    }
+    
     stages {
-        stage('Checkout') {
+        stage('Clonar repositorio') {
             steps {
-                // Obtener el código fuente del repositorio
                 git branch: 'main', url: 'https://github.com/JesusLopezGomez/calculadoraSpring.git'
             }
         }
 
-        stage('Build') {
+        stage('Construir la aplicación') {
             steps {
-                sh 'mkdir -p webapps/CalculadoraSpring'
-
-                sh 'cp -r Jenkinsfile src webapps/CalculadoraSpring'
+                sh 'mvn clean package -DskipTests=true'
             }
         }
 
